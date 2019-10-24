@@ -1,0 +1,19 @@
+name: "Docker Build Tag Push to GCR"
+author: "Sean McGrath"
+description: "Build, tag, and push images to Google Container Registry"
+
+inputs:
+  registry:
+    description: "Registry URL"
+    required: false
+    default: "gcr.io"
+  image:
+    description: "Docker image name"
+    required: false
+  tag:
+    description: "Docker image tag"
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
