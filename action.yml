@@ -16,7 +16,7 @@ inputs:
   environment:
     description: "Environment name"
     required: true
-  project:
+  gcloud_project:
     decription: "GCloud project name"
     required: true
 
