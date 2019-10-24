@@ -5,13 +5,13 @@ REGISTRY=${INPUT_REGISTRY:-gcr.io}
 IMAGE=${INPUT_IMAGE}
 ENVIRONMENT=${INPUT_ENVIRONMENT:-development}
 TAG=${INPUT_VERSION_TAG}
+PROJECT=${INPUT_GCLOUD_PROJECT}
 
 if [ -n "${GCLOUD_AUTH_KEY}" ]
 then
     echo "${GCLOUD_AUTH_KEY}" | base64 --decode > /tmp/gcloud_key.json
     gcloud auth activate-service-account --quiet --key-file /tmp/gcloud_key.json
     gcloud auth configure-docker --quiet
-    PROJECT=$(gcloud config get-value project 2>/dev/null)
 else
     echo "GCLOUD_AUTH_KEY not provided, exiting" 1>&2
     exit 1

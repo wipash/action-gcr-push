@@ -24,5 +24,6 @@ jobs:
           image: cmsback
           version_tag: 1.0.2
           environment: production
+          project: central-management-system
 
 ```

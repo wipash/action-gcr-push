@@ -16,6 +16,9 @@ inputs:
   environment:
     description: "Environment name"
     required: true
+  project:
+    decription: "GCloud project name"
+    required: true
 
 runs:
   using: "docker"
