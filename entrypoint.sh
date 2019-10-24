@@ -17,7 +17,7 @@ else
     exit 1
 fi
 
-sh -c "docker build -t $IMAGE:$GITHUB_SHA"
+sh -c "docker build -t $IMAGE:$GITHUB_SHA ./"
 
 sh -c "docker tag $IMAGE:$GITHUB_SHA $REGISTRY/$PROJECT/$ENVIRONMENT/$IMAGE:$GITHUB_SHA"
 sh -c "docker tag $IMAGE:$GITHUB_SHA $REGISTRY/$PROJECT/$ENVIRONMENT/$IMAGE:latest"
