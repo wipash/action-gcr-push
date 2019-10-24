@@ -9,10 +9,13 @@ inputs:
     default: "gcr.io"
   image:
     description: "Docker image name"
+    required: true
+  version_tag:
+    description: "Docker image version tag"
     required: false
-  tag:
-    description: "Docker image tag"
-    required: false
+  environment:
+    description: "Environment name"
+    required: true
 
 runs:
   using: "docker"
