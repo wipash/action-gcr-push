@@ -11,7 +11,7 @@ on:
       - master
 jobs:
   build_push_gcr:
-    runs-on: ubunti-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -23,6 +23,6 @@ jobs:
         with:
           image: cmsback
           version_tag: 1.0.2
-          environment: staging
+          environment: production
 
 ```
